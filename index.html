@@ -231,26 +231,101 @@
   </section>
 
   <section>
-    <h2>Proof of Concept – Weighted Decision Matrix</h2>
-    <table>
-      <tr>
-        <th>Criteria</th><th>Weight</th><th>Option A</th><th>Option B</th><th>Option C</th>
-      </tr>
-      <tr><td>Cost</td><td>5</td><td>9</td><td>6</td><td>7</td></tr>
-      <tr><td>Built-in Bluetooth/Wi-Fi</td><td>4</td><td>10</td><td>4</td><td>8</td></tr>
-      <tr><td>Ease of Programming</td><td>3</td><td>9</td><td>10</td><td>7</td></tr>
-      <tr><td>Power Consumption</td><td>3</td><td>8</td><td>7</td><td>9</td></tr>
-      <tr><td>GPIO Pins & SD Support</td><td>2</td><td>10</td><td>8</td><td>6</td></tr>
-    </table>
+  <h2>Posture Monitoring System – Microcontroller Selection (Updated for Arduino UNO)</h2>
 
-    <p><b>Total Scores:</b><br>
-      Option A = 9.32<br>
-      Option B = 6.65<br>
-      Option C = 7.45
-    </p>
+  <table>
+    <tr>
+      <th>Criteria for Comparison</th>
+      <th>Weight</th>
+      <th>Reason for Criteria</th>
+      <th>Option 1: Arduino UNO (Selected)</th>
+      <th>Option 2: ESP32</th>
+      <th>Option 3: Raspberry Pi Pico</th>
+    </tr>
 
-    <blockquote>Conclusion: ESP32-based architecture chosen for best cost-to-performance balance.</blockquote>
-  </section>
+    <tr>
+      <td>1. Ease of Prototyping</td>
+      <td>5</td>
+      <td>For PoC, fast development is required</td>
+      <td>Very Easy – Arduino IDE, huge community, simple programming</td>
+      <td>Moderate – Requires configuring multiple libraries</td>
+      <td>Moderate – Needs MicroPython/C++ setup</td>
+    </tr>
+
+    <tr>
+      <td>2. Sensor Compatibility (Ultrasonic)</td>
+      <td>5</td>
+      <td>Ultrasonic sensors need stable 5V & clean trigger/echo signals</td>
+      <td>Excellent – Built-in 5V output, direct HC-SR04 support</td>
+      <td>Good – Needs 5V to 3.3V logic conversion</td>
+      <td>Good – 3.3V logic, also needs conversion</td>
+    </tr>
+
+    <tr>
+      <td>3. Real-Time Performance</td>
+      <td>4</td>
+      <td>Posture detection requires consistent timing</td>
+      <td>High – Perfect for real-time loops</td>
+      <td>Very High – Faster with dual-core</td>
+      <td>High – Fast enough</td>
+    </tr>
+
+    <tr>
+      <td>4. Ease of Integration in Chair Prototype</td>
+      <td>3</td>
+      <td>Must physically fit and connect easily</td>
+      <td>Easy – Small board, simple wiring</td>
+      <td>Difficult – Needs wireless setup</td>
+      <td>Easy – Small form factor</td>
+    </tr>
+
+    <tr>
+      <td>5. Power Requirement</td>
+      <td>3</td>
+      <td>Should run on power bank</td>
+      <td>Low Power (5V) – Very stable</td>
+      <td>Medium (3.3V)</td>
+      <td>Low</td>
+    </tr>
+
+    <tr>
+      <td>6. Cost</td>
+      <td>4</td>
+      <td>Hackathon constraints</td>
+      <td>₹450–550 (Cheap)</td>
+      <td>₹800–1000</td>
+      <td>₹500–600</td>
+    </tr>
+
+    <tr>
+      <td>7. Debugging Simplicity</td>
+      <td>3</td>
+      <td>Faster testing = faster PoC</td>
+      <td>Very Easy (Serial Monitor)</td>
+      <td>Moderate</td>
+      <td>Easy</td>
+    </tr>
+
+    <tr>
+      <td>8. Wireless Features</td>
+      <td>1</td>
+      <td>Not required for PoC</td>
+      <td>Not available (but not needed)</td>
+      <td>Available (WiFi + Bluetooth)</td>
+      <td>Not available</td>
+    </tr>
+
+    <tr>
+      <td>9. Overall Suitability for PoC</td>
+      <td>—</td>
+      <td>Final decision</td>
+      <td><b>Selected (Best for quick prototype)</b></td>
+      <td>Overkill for PoC</td>
+      <td>Suitable but less convenient</td>
+    </tr>
+
+  </table>
+</section>
 
   <section>
     <h2>Stakeholders’ Feedback Summary</h2>
